@@ -5,7 +5,6 @@ public class Defensor extends Jugador {
 
     public double precision = 4;
 
-
     @Override
     public double precisionAlArco() {
         return precision;
@@ -16,4 +15,7 @@ public class Defensor extends Jugador {
         return 8;
     }
 
+    public boolean esDelantero() {
+        return false;
+    }
 }

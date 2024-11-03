@@ -14,4 +14,7 @@ public class Central extends Jugador {
         return 4;
     }
 
+    public boolean esDelantero() {
+        return false;
+    }
 }

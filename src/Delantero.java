@@ -15,4 +15,9 @@ public class Delantero extends Jugador{
         return 2;
     }
 
+    @Override
+    public boolean esDelantero() {
+        return true;
+    }
+
 }

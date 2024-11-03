@@ -15,6 +15,7 @@ public abstract class Jugador {
 
     public abstract double precisionAlArco();
     public abstract int habilidadDefensiva();
+    public abstract boolean esDelantero();
 
     public boolean posibleArquero(){
         return this.altura >= 180;
@@ -33,5 +34,6 @@ public abstract class Jugador {
     public double posibleGolDeCabeza(){
         return this.altura * precisionAlArco();
     }
+
 
 }

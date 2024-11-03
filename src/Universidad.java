@@ -18,7 +18,6 @@ public class Universidad {
         ArrayList<Jugador> zurdos = new ArrayList<>();
         for (Jugador j : titulares){
             if(j.zurdo){
-                j.precisionAlArco();
                 zurdos.add(j);
             }
         }
@@ -30,5 +29,41 @@ public class Universidad {
         return zurdos;
     }
 
+    public String equipoSalvajeODefensivo() {
+        int salvajes = 0;
+        int defensores = 0;
+        for (Jugador j : titulares) {
+            if (j.esDelantero()) {
+                salvajes++;
+            } else {
+                defensores++;
+            }
+        }
+        if (salvajes > titulares.size() / 2) {
+            return "Salvaje";
+        } else if (defensores > titulares.size() / 2) {
+            return "Impenetrable";
+        } else {
+            return "Balanceado";
+        }
+    }
+
+    public boolean tieneArqueroTitular() {
+        for (Jugador j : titulares) {
+            if (j instanceof Arquero && j.altura >= 180) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean tieneArqueroSuplente() {
+        for (Jugador j : suplentes) {
+            if (j instanceof Arquero && j.altura >= 180) {
+                return true;
+            }
+        }
+        return false;
+    }
 
 }
